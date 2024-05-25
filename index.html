@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - eCommerce Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url(https://i.pinimg.com/564x/e7/60/cb/e760cb9ae01407812daab560d8e06f03.jpg) no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+
+        main {
+            margin: 2rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 3rem; /* Font size for h2 */
+        }
+
+        p {
+            font-size: 1.2rem; /* Font size for p */
+        }
+
+        .featured-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 2rem 0;
+        }
+
+        .featured-product {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            text-align: center;
+            width: 45%;
+            margin: 1rem;
+        }
+
+        .featured-product img {
+            max-width: 20%;
+            height: auto;
+        }
+
+        .featured-product h3 {
+            margin: 1rem 0 0.5rem;
+        }
+
+        .featured-product p {
+            margin: 0.5rem 0 1rem;
+        }
+
+        .featured-product button {
+            background-color: #ff7e5f;
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        .featured-product button:hover {
+            background-color: #feb47b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>D'OHN Apparel</h1>
+        <nav>
+            <a href="file:///C:/Users/Owner/Downloads/ggt/index.html">Home</a>
+            <a href="file:///C:/Users/Owner/Downloads/ggt/about.html">About Us</a>
+            <a href="file:///C:/Users/Owner/Downloads/ggt/product.html">Shop</a>
+            <a href="file:///C:/Users/Owner/Downloads/ggt/contatcs.html">Contact</a>
+            <a href="file:///C:/Users/Owner/Downloads/ggt/product.html">Cart (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Danyel's Fashion </h2>
+        <p>Elevating Confidence through Fashion.</p>
+        <div class="featured-container">
+            <div class="featured-product">
+                <img src="https://cdn.shopify.com/s/files/1/0095/4420/4367/products/Timberland-TB010061713-M-039.jpg?v=1665698851" alt="Featured Product 1">
+                <h3>High Fashion Boots</h3>
+                <p>Price: $199.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="featured-product">
+                <img src="https://th.bing.com/th/id/OIP.wWHvATWpcdbO4S5vPK3KuAHaHa?rs=1&pid=ImgDetMain" alt="Featured Product 2">
+                <h3>8 Balled Jacket</h3>
+                <p>Price: $189.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="featured-product">
+                <img src="https://th.bing.com/th/id/OIP.YE8q2eJuujZvGjw5GBfInwHaLG?rs=1&pid=ImgDetMain" alt="Featured Product 3">
+                <h3>Blacked Jorts</h3>
+                <p>Price: $69.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="featured-product">
+                <img src="https://ae01.alicdn.com/kf/HTB1DPdwPVXXXXcDaXXXq6xXFXXXx/2017-New-Arrival-Mens-Hip-Hop-Baggy-Jeans-Men-Plus-Size-Jeans-Pants-Loose-Fit-Famous.jpg" alt="Featured Product 4">
+                <h3>Buggy Pants</h3>
+                <p>Price: $149.99</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let cartCount = 0;
+
+            const updateCartCount = () => {
+                document.getElementById('cart-count').textContent = cartCount;
+            };
+
+            const addToCartButtons = document.querySelectorAll('.featured-product button');
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    cartCount++;
+                    updateCartCount();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
